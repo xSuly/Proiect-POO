@@ -1,3 +1,3 @@
-# OOP Template
+# Proiect POO
 
-Proiect POO - Magazin de ceasuri de mana
+Magazin de ceasuri de mana
