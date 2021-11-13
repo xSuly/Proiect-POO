@@ -26,7 +26,7 @@ int main() {
     Magazin m4("Magazin ceasuri de mana luxury", "Bucuresti", "Strada Unirii", 7, 16,  "0725364758", "luxurywatch.ro");
     Ceas model2("Fossil", "Townsman ME3197 Black", 825.0, 2019);
     Ceas model3("Emporio Armani", "Renato AR2448 Argintiu", 1010.0, 2015);
-    Magazin m5("Magazin", "rm", "str", 12, 15, "0707070707", "site.com");
+    //Magazin m5("Magazin", "rm", "str", 12, 15, "0707070707", "site.com");
 
     Client c2("Liviu", "Andrei", "Ramnicu Sarat", "Bulevardul 1 Decembrie 1918", {});
     Client c3("Cosmin", "Costin", "Comuna Ciorasti", "Strada Scolii", {});
