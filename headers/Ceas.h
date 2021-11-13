@@ -13,7 +13,7 @@ class Ceas{
     float pret;
     int an_fabricatie;
 public:
-    Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie)
+    Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie);
 
     friend std::ostream &operator<<(std::ostream &os, const Ceas &ceas);
 

@@ -6,7 +6,38 @@
 
     Client::Client() {}
 
-const std::string &Client::getNume() const {
+
+    Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare){}
+    Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare), cos_de_cumparaturi(cosDeCumparaturi) {}
+
+    Client::Client(const Client& copie)
+{
+    this->nume=copie.nume;
+    this->prenume=copie.prenume;
+    this->oras=copie.oras;
+    this->adresa_de_livrare=copie.adresa_de_livrare;
+    for(const auto & Ceas : copie.cosDeCumparaturi)
+    {
+        this->cos_de_cumparaturi.push_back(Ceas);
+    }
+}
+
+Client& Client::operator=(const Client& copie)
+{
+    if(this!=&copie)
+    {
+        this->nume=copie.nume;
+        this->prenume=copie.prenume;
+        this->oras=copie.oras;
+        this->adresa_de_livrare=copie.adresa_de_livrare;
+        this->cos_de_cumparaturi=copie.cos_de_cumparaturi;
+    }
+    return *this;
+}
+Client::Client()=default;
+
+
+    const std::string &Client::getNume() const {
     return nume;
 }
 
@@ -46,33 +77,5 @@ void Client::setCosDeCumparaturi(const std::vector<Ceas> &cosDeCumparaturi) {
     cos_de_cumparaturi = cosDeCumparaturi;
 }
 
-Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare){}
 
-    Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare), cos_de_cumparaturi(cosDeCumparaturi) {}
-
-Client(const Client& copie)
-{
-    this->nume=copie.nume;
-    this->prenume=copie.prenume;
-    this->oras=copie.oras;
-    this->adresa_de_livrare=copie.adresa_de_livrare;
-    for(const auto & Magazin : copie.cos_de_cumparaturi)
-    {
-        this->cos_de_cumparaturi.push_back(Magazin);
-    }
-}
-
-Client& operator=(const Client& copie)
-{
-    if(this!=&copie)
-    {
-        this->nume=copie.nume;
-        this->prenume=copie.prenume;
-        this->oras=copie.oras;
-        this->adresa_de_livrare=copie.adresa_de_livrare;
-        this->cos_de_cumparaturi=copie.cos_de_cumparaturi;
-    }
-    return *this;
-}
-Client()=default;
 

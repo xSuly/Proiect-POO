@@ -9,9 +9,9 @@
 
 #include <iostream>
 #include<string>
-#include<headers/Magazin.h>
-#include<headers/Ceas.h>
-#include<headers/Client.h>
+#include"headers/Magazin.h"
+#include"headers/Ceas.h"
+#include"headers/Client.h"
 #include<vector>
 
 int main() {

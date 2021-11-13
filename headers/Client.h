@@ -7,6 +7,7 @@
 
 #include <string>
 #include <vector>
+#include"Ceas.h"
 
 class Client{
     std::string nume;
@@ -20,10 +21,8 @@ public:
     {
         cos_de_cumparaturi.push_back(Ceas);
     }
-    Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare)
-    Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi)
-
-    const
+    Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare);
+    Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi);
 
     std::string &getNume() const;
 
