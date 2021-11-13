@@ -3,7 +3,7 @@
 // Created by xSuly on 10/22/2021.
 //
 
-// Proiect POO - Aplicatie magazin ceasuri de sana
+// Proiect POO - Aplicatie magazin ceasuri de mana
 // Albei Liviu-Andrei
 // 261
 

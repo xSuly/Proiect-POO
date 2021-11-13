@@ -6,7 +6,6 @@
 
     Client::Client() {}
 
-
     Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare){}
     Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare), cos_de_cumparaturi(cosDeCumparaturi) {}
 

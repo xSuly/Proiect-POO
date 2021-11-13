@@ -17,7 +17,7 @@ class Magazin{
     std::string site_web;
 public:
     Magazin();
-    Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, /*const std::string &program*/int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb);
+    Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb);
 
     Magazin(const Magazin &copie);
 
