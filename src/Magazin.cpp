@@ -32,7 +32,7 @@ Magazin& Magazin::operator=(const Magazin& copie){
 }
 
 Magazin::~Magazin() {
-    std::cout<<"test ";
+    std::cout<<"test destr";
 }
 
 friend std::ostream &operator<<(std::ostream &os, const Magazin &magazin) {
