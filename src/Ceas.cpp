@@ -6,7 +6,7 @@
 
 Ceas::Ceas() {}
 
-Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie) : brand(brand), model(model), pret(pret), an_fabricatie(anFabricatie) {}
+Ceas::Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie) : brand(brand), model(model), pret(pret), an_fabricatie(anFabricatie) {}
 
 
 friend std::ostream &operator<<(std::ostream &os, const Ceas &ceas) {
