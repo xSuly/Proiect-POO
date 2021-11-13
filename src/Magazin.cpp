@@ -6,9 +6,9 @@
 
 Magazin::Magazin() {}
 
-Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb) : nume_magazin(numeMagazin), oras(oras), adresa(adresa), ora_inchidere(ora_inchidere), ora_deschidere(ora_deschidere), numar_telefon(numarTelefon), site_web(siteWeb) {}
+Magazin::Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb) : nume_magazin(numeMagazin), oras(oras), adresa(adresa), ora_inchidere(ora_inchidere), ora_deschidere(ora_deschidere), numar_telefon(numarTelefon), site_web(siteWeb) {}
 
-Magazin(const Magazin &copie){
+Magazin::Magazin(const Magazin &copie){
     this->nume_magazin=copie.nume_magazin;
     this->oras=copie.oras;
     this->adresa=copie.adresa;
@@ -19,7 +19,7 @@ Magazin(const Magazin &copie){
     this->site_web=copie.site_web;
 }
 
-Magazin& operator=(const Magazin& copie){
+Magazin& Magazin::operator=(const Magazin& copie){
     this->nume_magazin=copie.nume_magazin;
     this->oras=copie.oras;
     this->adresa=copie.adresa;
@@ -31,7 +31,7 @@ Magazin& operator=(const Magazin& copie){
     return *this;
 }
 
-~Magazin() {
+Magazin::~Magazin() {
     std::cout<<"test ";
 }
 
