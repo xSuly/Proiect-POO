@@ -23,8 +23,10 @@ public:
     }
     Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare);
     Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi);
+    Client(const Client& copie);
+    Client& operator=(const Client& copie);
 
-    std::string &getNume() const;
+    const std::string &getNume() const;
 
     void setNume(const std::string &nume);
 

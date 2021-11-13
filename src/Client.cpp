@@ -4,7 +4,7 @@
 
 #include "../headers/Client.h"
 
-    Client::Client() {}
+
 
     Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare){}
     Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare), cos_de_cumparaturi(cosDeCumparaturi) {}
@@ -15,7 +15,7 @@
     this->prenume=copie.prenume;
     this->oras=copie.oras;
     this->adresa_de_livrare=copie.adresa_de_livrare;
-    for(const auto & Ceas : copie.cosDeCumparaturi)
+    for(const auto & Ceas : copie.cos_de_cumparaturi)
     {
         this->cos_de_cumparaturi.push_back(Ceas);
     }

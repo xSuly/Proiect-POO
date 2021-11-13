@@ -6,6 +6,7 @@
 #define PROIECT_POO_CEAS_H
 
 #include <string>
+#include<iostream>
 
 class Ceas{
     std::string brand;

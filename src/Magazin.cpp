@@ -3,6 +3,7 @@
 //
 
 #include "../headers/Magazin.h"
+#include<iostream>
 
 Magazin::Magazin() {}
 
@@ -35,7 +36,7 @@ Magazin::~Magazin() {
     std::cout<<"test destr";
 }
 
-friend std::ostream &operator<<(std::ostream &os, const Magazin &magazin) {
+ std::ostream &operator<<(std::ostream &os, const Magazin &magazin) {
     os <<"Nume magazin: " <<magazin.nume_magazin<<std::endl<< "Oras: " << magazin.oras << std::endl << "Adresa: " << magazin.adresa << std::endl << "Orar: " << magazin.ora_inchidere<<" "<<magazin.ora_deschidere<< std::endl << "Numar de telefon: " << magazin.numar_telefon << std::endl << "Adresa site web magazin: " << magazin.site_web << std::endl;
     return os;
 }
