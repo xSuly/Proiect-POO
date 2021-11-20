@@ -37,7 +37,7 @@ int main() {
     Client c4;
     c4=c3;
     c4.adaugare_produs(model3);
-    Logare l1(c2);
+    Logare l1({}, c2);
 
     return 0;
 }

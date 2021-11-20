@@ -39,20 +39,5 @@ void Logare::user_add(const Client client) {
 
 void Logare::login(std::string nume) {
 
-    for (const auto &client: users)
-        if (client.getUsername().compare(nume) == 0) {
-            std::cout << "Introduceti parola: ";
-            std::string parola;
-            std::cin >> parola;
-            if (client.getPassword().compare(parola) == 0) {
-                std::cout << "Ati introdus parola corecta! \n";
-                std::cout << client << "\n";
-                std::cout << "Ce balanta vreti sa introduceti in cont? \n";
-                std::cin >> balanta_cont;
-                ok = 0;
-                break;
 
-            } else { std::cout << "Parola introdusa este gresita" << "\n"; }
-        } else
-            ok = 1;
 }
