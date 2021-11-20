@@ -38,6 +38,12 @@ void Logare::user_add(const Client client) {
     users.push_back(client);
 }
 
+void Logare::adaugare_balanta(Client client){
+    std::cout << "Introduceti suma cu care vreti sa va incarcati contul: ";
+    std::cin>>balanta_cont;
+}
+
+
 void Logare::login(std::string nume) {
 
 
