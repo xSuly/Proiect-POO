@@ -2,9 +2,6 @@
 // Created by Liviu-Daniel on 11/21/2021.
 //
 
-//
-// Created by Liviu-Daniel on 11/20/2021.
-//
 
 #include "headers/Logare.h"
 #include "/headers/Client.h"
