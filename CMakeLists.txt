@@ -7,4 +7,4 @@ add_executable(Proiect_POO
         main.cpp
         src/Client.cpp
         src/Ceas.cpp
-        src/Magazin.cpp)
+        src/Magazin.cpp Logare.cpp Logare.h)

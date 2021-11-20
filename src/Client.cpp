@@ -6,13 +6,19 @@
 
 
 
-    Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare){}
-    Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi) : nume(nume), prenume(prenume), oras(oras), adresa_de_livrare(adresaDeLivrare), cos_de_cumparaturi(cosDeCumparaturi) {}
+    Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare) : nume(nume), prenume(prenume), username(username), password(password), oras(oras), adresa_de_livrare(adresaDeLivrare){}
+    Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi) : nume(nume), prenume(prenume), username(username), password(password), oras(oras), adresa_de_livrare(adresaDeLivrare), cos_de_cumparaturi(cosDeCumparaturi) {}
 
+    std::ostream &operator<<(std::ostream &os, const Client &client) {
+    os << "Nume: " << client.nume << " Prenume: " << client.prenume << " Username: " << client.username << " Password: " << client.password << " Oras: " << client.oras << " Adresa livrare: " << client.adresa_de_livrare <<  "\n";
+    return os;
+}
     Client::Client(const Client& copie)
 {
     this->nume=copie.nume;
     this->prenume=copie.prenume;
+    this->username=copie.username;
+    this->password=copie.password;
     this->oras=copie.oras;
     this->adresa_de_livrare=copie.adresa_de_livrare;
     for(const auto & Ceas : copie.cos_de_cumparaturi)
@@ -27,6 +33,8 @@ Client& Client::operator=(const Client& copie)
     {
         this->nume=copie.nume;
         this->prenume=copie.prenume;
+        this->username=copie.username;
+        this->password=copie.password;
         this->oras=copie.oras;
         this->adresa_de_livrare=copie.adresa_de_livrare;
         this->cos_de_cumparaturi=copie.cos_de_cumparaturi;
@@ -34,6 +42,9 @@ Client& Client::operator=(const Client& copie)
     return *this;
 }
 Client::Client()=default;
+
+
+
 
 
     const std::string &Client::getNume() const {
@@ -74,6 +85,22 @@ const std::vector<Ceas> &Client::getCosDeCumparaturi() const {
 
 void Client::setCosDeCumparaturi(const std::vector<Ceas> &cosDeCumparaturi) {
     cos_de_cumparaturi = cosDeCumparaturi;
+}
+
+const std::string &Client::getUsername() const {
+    return username;
+}
+
+void Client::setUsername(const std::string &username) {
+    Client::username = username;
+}
+
+const std::string &Client::getPassword() const {
+    return password;
+}
+
+void Client::setPassword(const std::string &password) {
+    Client::password = password;
 }
 
 
