@@ -3,8 +3,8 @@
 //
 
 
-#include "headers/Logare.h"
-#include "/headers/Client.h"
+#include "../headers/Logare.h"
+#include "../headers/Client.h"
 
 
 Logare::Logare(int balantaCont, bool ok) : balanta_cont(balantaCont), ok(ok) {}
@@ -38,13 +38,27 @@ void Logare::user_add(const Client client) {
     users.push_back(client);
 }
 
-void Logare::adaugare_balanta(Client client){
-    std::cout << "Introduceti suma cu care vreti sa va incarcati contul: ";
-    std::cin >> balanta_cont;
+void Logare::adaugare_balanta(float balanta_adaugata){
+    std::cout <<"Suma cu care incarcati balanta este: "<< balanta_adaugata<<" RON.";
+    balanta_cont=balanta_adaugata;
 }
 
 
-void Logare::login(std::string nume) {
+void Logare::login(std::string name) {
 
-
+    for(auto i = users.begin(); i<=users.end(); i++)
+        if(Client.getUsername().compare(name)==0)
+        {
+            std::cout<<"Parola: ";
+            std::string pass;
+            std::cin >> pass;
+            if(Client.getPassword().compare(pass)==0)
+            {
+                std::cout<<"Parola corecta! Bine ati venit\n";
+                ok=0;
+                break;
+            }
+            else std::cout<<"Parola gresita!\n";
+        }
+    else ok=1;
 }

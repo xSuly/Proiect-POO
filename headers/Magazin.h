@@ -7,6 +7,8 @@
 
 #include <string>
 #include<vector>
+#include<chrono>
+#include<ctime>
 
 class Magazin{
     std::string nume_magazin;
@@ -16,13 +18,22 @@ class Magazin{
     int ora_inchidere;
     std::string numar_telefon;
     std::string site_web;
-    std::vector <pair<model,pret>> modele_disponibile;
+    std::vector < std::pair <std::string,float> > modele_disponibile;
+    /*{std::time_t tt;
+    system_clock::time_point today = system_clock::now();
+    tt = system_clock::to_time_t ( today );
+    std::cout << "today is: " << ctime(&tt);} *//// ??? pentru a verifica daca magazinul este deschis in momentul accesarii acestuia
 public:
     Magazin();
 
-    void adaugare_produs_disponibil(std::string nume)
+    void adaugare_produs_disponibil(std::string nume, float pret)
     {
-        modele_disponibile.push_back(nume);
+        modele_disponibile.push_back(std::make_pair(nume, pret));
+    }
+
+    void in_timpul_programului(Magazin ora_deschidere, Magazin ora_inchidere)
+    {
+        /// todo
     }
 
     Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb);

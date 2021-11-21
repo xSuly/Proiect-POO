@@ -7,7 +7,7 @@
 
 #include<iostream>
 #include <vector>
-#include "Client.h"
+#include "../headers/Client.h"
 
 class Logare{
     int balanta_cont;
@@ -31,6 +31,8 @@ public:
     void setOk(bool ok);
 
     void user_add(const Client client);
+
+    void adaugare_balanta(float balanta_adaugata);
 
     void login(std::string nume);
 

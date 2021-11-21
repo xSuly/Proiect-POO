@@ -40,6 +40,9 @@ int main() {
     //Logare l1({}, c2);
     c4.adaugare_magazin(m1);
     c4.adaugare_magazin(m2);
+    m1.adaugare_produs_disponibil("40MM ROLEX DAYTONA WATCH", 115000.0);
+    Logare l1(0,{});
+    l1.adaugare_balanta(100);
 
     return 0;
 }

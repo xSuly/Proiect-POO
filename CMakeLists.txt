@@ -8,4 +8,8 @@ add_executable(Proiect_POO
         src/Client.cpp
         src/Ceas.cpp
         src/Magazin.cpp
-        src/Logare.cpp)
+        src/Logare.cpp
+        headers/Client.h
+        headers/Ceas.h
+        headers/Magazin.h
+        headers/Logare.h)
