@@ -7,7 +7,7 @@
 
 #include<iostream>
 #include <vector>
-#include"/headers/Client.h"
+#include "Client.h"
 
 class Logare{
     int balanta_cont;

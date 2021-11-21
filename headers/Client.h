@@ -8,6 +8,8 @@
 #include <string>
 #include <vector>
 #include"Ceas.h"
+#include "Magazin.h"
+#include "Logare.h"
 
 class Client{
     std::string nume;
@@ -17,12 +19,26 @@ class Client{
     std::string oras;
     std::string adresa_de_livrare;
     std::vector <Ceas> cos_de_cumparaturi;
+    std::vector <Ceas> magazin_cautat;
+    float suma=0;
 public:
     Client();
     void adaugare_produs(Ceas Ceas)
     {
         cos_de_cumparaturi.push_back(Ceas);
     }
+    void adaugare_magazin(Magazin Magazin)
+    {
+        magazin_cautat.push_back(Magazin);
+    }
+    void calculare_total(Ceas Ceas)
+    {
+        suma = suma + Ceas.pret;
+        if(suma<balanta_cont)
+            std::cout<<"Nu aveti balanta necesara achizitionarii modelului/modelelor.";
+        else std::cout<<"Puteti achizitiona modelul/modelele cu balanta detinuta in cont";
+    }
+
     Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare);
     Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare, const std::vector<Ceas> &cosDeCumparaturi);
     Client(const Client& copie);

@@ -6,6 +6,7 @@
 #define PROIECT_POO_MAGAZIN_H
 
 #include <string>
+#include<vector>
 
 class Magazin{
     std::string nume_magazin;
@@ -15,8 +16,15 @@ class Magazin{
     int ora_inchidere;
     std::string numar_telefon;
     std::string site_web;
+    std::vector <pair<model,pret>> modele_disponibile;
 public:
     Magazin();
+
+    void adaugare_produs_disponibil(std::string nume)
+    {
+        modele_disponibile.push_back(nume);
+    }
+
     Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb);
 
     Magazin(const Magazin &copie);
