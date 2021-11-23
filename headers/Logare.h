@@ -10,17 +10,14 @@
 #include "../headers/Client.h"
 
 class Logare{
-    int balanta_cont;
+    //int balanta_cont;
     std::vector<Client> users;
     bool ok;
 public:
 
-    Logare(int balantaCont, bool ok);
-    Logare(int balantaCont, const std::vector<Client> &users, bool ok);
+    Logare(bool ok);
+    Logare(const std::vector<Client> &users, bool ok);
 
-    int getBalantaCont() const;
-
-    void setBalantaCont(int balantaCont);
 
     const std::vector<Client> &getUsers() const;
 
@@ -32,7 +29,7 @@ public:
 
     void user_add(const Client client);
 
-    void adaugare_balanta(float balanta_adaugata);
+
 
     void login(std::string nume);
 

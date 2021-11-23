@@ -33,7 +33,7 @@ Magazin& Magazin::operator=(const Magazin& copie){
 }
 
 Magazin::~Magazin() {
-    std::cout<<"test destr";
+    std::cout<<"destructor magazin \n";
 }
 
  std::ostream &operator<<(std::ostream &os, const Magazin &magazin) {
@@ -96,3 +96,13 @@ const std::string &Magazin::getSiteWeb() const {
 void Magazin::setSiteWeb(const std::string &siteWeb) {
     site_web = siteWeb;
 }
+    void Magazin::afisare_modele_disponibile(const Magazin &Magazin)
+    {
+        for ( auto it = Magazin.modele_disponibile.begin(); it != Magazin.modele_disponibile.end(); ++it)
+            if(it!=Magazin.modele_disponibile.end()-1)
+                std::cout<<"Model: "<<it->first<<"\nPret: "<<it->second<<", ";
+            else std::cout<<"Model: "<<it->first<<"\nPret: "<<it->second<<".";
+            std::cout<<"\n";
+    }
+
+

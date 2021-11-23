@@ -31,6 +31,8 @@ public:
         modele_disponibile.push_back(std::make_pair(nume, pret));
     }
 
+    void afisare_modele_disponibile(const Magazin &Magazin);
+
     void in_timpul_programului(Magazin ora_deschidere, Magazin ora_inchidere)
     {
         /// todo

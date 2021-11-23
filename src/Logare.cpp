@@ -7,16 +7,10 @@
 #include "../headers/Client.h"
 
 
-Logare::Logare(int balantaCont, bool ok) : balanta_cont(balantaCont), ok(ok) {}
-Logare::Logare(int balantaCont, const std::vector<Client> &users, bool ok) : balanta_cont(balantaCont), users(users), ok(ok) {}
+Logare::Logare(bool ok) : ok(ok) {}
+Logare::Logare(const std::vector<Client> &users, bool ok) : users(users), ok(ok) {}
 
-int Logare::getBalantaCont() const {
-    return balanta_cont;
-}
 
-void Logare::setBalantaCont(int balantaCont) {
-    balanta_cont = balantaCont;
-}
 
 const std::vector<Client> &Logare::getUsers() const {
     return users;
@@ -38,15 +32,12 @@ void Logare::user_add(const Client client) {
     users.push_back(client);
 }
 
-void Logare::adaugare_balanta(float balanta_adaugata){
-    std::cout <<"Suma cu care incarcati balanta este: "<< balanta_adaugata<<" RON.";
-    balanta_cont=balanta_adaugata;
-}
+
 
 
 void Logare::login(std::string name) {
 
-    for(auto i = users.begin(); i<=users.end(); i++)
+    /*for(auto i = users.begin(); i<=users.end(); i++)
         if(Client.getUsername().compare(name)==0)
         {
             std::cout<<"Parola: ";
@@ -60,5 +51,5 @@ void Logare::login(std::string name) {
             }
             else std::cout<<"Parola gresita!\n";
         }
-    else ok=1;
+    else ok=1;*/
 }

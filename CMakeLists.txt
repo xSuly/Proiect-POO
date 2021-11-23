@@ -12,4 +12,4 @@ add_executable(Proiect_POO
         headers/Client.h
         headers/Ceas.h
         headers/Magazin.h
-        headers/Logare.h)
+        ../headers/Logare.h)
