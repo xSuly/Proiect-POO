@@ -31,7 +31,7 @@ public:
 
 
 
-    void login(std::string nume);
+    void login(const Client &Client);
 
 };
 

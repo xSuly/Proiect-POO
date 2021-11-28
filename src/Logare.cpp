@@ -35,21 +35,36 @@ void Logare::user_add(const Client client) {
 
 
 
-void Logare::login(std::string name) {
+void Logare::login(const Client &Client) {
 
-    /*for(auto i = users.begin(); i<=users.end(); i++)
-        if(Client.getUsername().compare(name)==0)
+    std::cout << "Introduceti parola, "<<Client.getUsername()<<"!\n";
+    std::string parola;
+    int i=0;
+    std::cin >> parola;
+    if(parola==Client.getPassword())
+        std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
+    else while(i<2)
         {
-            std::cout<<"Parola: ";
-            std::string pass;
-            std::cin >> pass;
-            if(Client.getPassword().compare(pass)==0)
+        std::cout<<"Parola introdusa este gresita! Mai aveti 2 incercari.\n";
+        std::cin >> parola;
+            if(parola==Client.getPassword())
+            {std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
+                i=10;}
+            else
             {
-                std::cout<<"Parola corecta! Bine ati venit\n";
-                ok=0;
-                break;
+                //i++;
+                std::cout << "Parola introdusa este tot gresita! Mai aveti o incercare.\n";
+                std::cin>> parola;
+                if(parola==Client.getPassword())
+                {std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
+                    i=10;}
+                else {
+                    std::cout << "Ne pare rau, parola introdusa gresit de prea multe ori!\n";
+                    goto breakpoint;
+                }
             }
-            else std::cout<<"Parola gresita!\n";
+            breakpoint:
+            i=10;
         }
-    else ok=1;*/
+
 }

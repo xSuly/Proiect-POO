@@ -67,6 +67,9 @@ int main() {
     c4.adaugare_balanta(521.5);
     std::cout<< "Balanta cont pentru "<<c4.getNume()<< " "<<c4.getPrenume()<<" este de "<<c4.getBalantaCont()<<" RON.\n";
 
+    Logare l1({});
+    l1.login({c2});
+
     return 0;
 }
 
