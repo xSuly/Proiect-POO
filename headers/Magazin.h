@@ -9,6 +9,7 @@
 #include<vector>
 #include<chrono>
 #include<ctime>
+#include"../headers/erori.h"
 
 class Magazin{
     std::string nume_magazin;
@@ -19,6 +20,8 @@ class Magazin{
     std::string numar_telefon;
     std::string site_web;
     std::vector < std::pair <std::string,float> > modele_disponibile;
+    const int id;
+    static int maxId;
     /*{std::time_t tt;
     system_clock::time_point today = system_clock::now();
     tt = system_clock::to_time_t ( today );
@@ -74,6 +77,9 @@ public:
 
     void setSiteWeb(const std::string &siteWeb);
 
+    static int getmaxId();
+
+    static void setmaxId(const int);
 
 };
 

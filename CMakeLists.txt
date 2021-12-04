@@ -12,4 +12,8 @@ add_executable(Proiect_POO
         headers/Client.h
         headers/Ceas.h
         headers/Magazin.h
-        ../headers/Logare.h)
+        ../headers/Logare.h
+        src/erori.cpp
+        ../headers/erori.h
+        "src/Modele ceas.cpp"
+        "headers/Modele ceas.h")

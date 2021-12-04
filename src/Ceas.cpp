@@ -5,13 +5,23 @@
 #include "../headers/Ceas.h"
 
 
-Ceas::Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie) : brand(brand), model(model), pret(pret), an_fabricatie(anFabricatie) {}
+Ceas::Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie) : brand(brand), model(model), pret(pret), an_fabricatie(anFabricatie) {
+    if(pret<50)
+        throw ceas_ieftin();
+}
 
 
 std::ostream &operator<<(std::ostream &os, const Ceas &ceas) {
     os << "Brand: " << ceas.brand << std::endl << "Model: " << ceas.model << std::endl << "Pret: " << ceas.pret << std::endl << "Anul fabricatiei: "<< ceas.an_fabricatie << std::endl;
     return os;
 }
+
+void Ceas::afisare(std::ostream &os) const{
+    const auto &Ceas = *this;
+    os << "Brand: " << Ceas.brand << std::endl << "Model: " << Ceas.model << std::endl << "Pret: " << Ceas.pret << std::endl << "An fabricatie: " << Ceas.an_fabricatie << std::endl;
+}
+
+
 
 const std::string &Ceas::getBrand() const {
     return brand;

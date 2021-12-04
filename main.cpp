@@ -13,6 +13,7 @@
 #include"headers/Ceas.h"
 #include"headers/Client.h"
 #include"headers/Logare.h"
+#include"headers/Modele ceas.h"
 #include<vector>
 
 int main() {
@@ -68,7 +69,17 @@ int main() {
     std::cout<< "Balanta cont pentru "<<c4.getNume()<< " "<<c4.getPrenume()<<" este de "<<c4.getBalantaCont()<<" RON.\n";
 
     Logare l1({});
-    l1.login({c2});
+    //l1.login({c2});
+
+    try{
+        Magazin Victoria("Victoria Watches", "Ramnicu Sarat", "Bulevardul Principal", 8, 20, "0700491222", "watchRms.com");
+        Rolex r1 = Rolex("Rolex", "Submariner 40mm", 23500.0, 2018, false, true, "Zale");
+    }
+    catch(eroare_magazin &eroare){
+        std::cout << eroare.what() << std::endl;
+    }
+
+
 
     return 0;
 }

@@ -5,11 +5,25 @@
 #include "../headers/Magazin.h"
 #include<iostream>
 
-Magazin::Magazin() {}
+int Magazin::maxId = 1;
 
-Magazin::Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb) : nume_magazin(numeMagazin), oras(oras), adresa(adresa), ora_inchidere(ora_inchidere), ora_deschidere(ora_deschidere), numar_telefon(numarTelefon), site_web(siteWeb) {}
+Magazin::Magazin(): id(maxId){
+    maxId++;
+    if(nume_magazin.length()<5)
+        throw nume_scurt_magazin();
+    if(ora_deschidere<7)
+        throw ora_deschidere_invalida();
+}
 
-Magazin::Magazin(const Magazin &copie){
+Magazin::Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb) : nume_magazin(numeMagazin), oras(oras), adresa(adresa), ora_inchidere(ora_inchidere), ora_deschidere(ora_deschidere), numar_telefon(numarTelefon), site_web(siteWeb), id(maxId) {
+    maxId++;
+    if(nume_magazin.length()<5)
+        throw nume_scurt_magazin();
+    if(ora_deschidere<7)
+        throw ora_deschidere_invalida();
+}
+
+Magazin::Magazin(const Magazin &copie): id(maxId){
     this->nume_magazin=copie.nume_magazin;
     this->oras=copie.oras;
     this->adresa=copie.adresa;
@@ -18,6 +32,7 @@ Magazin::Magazin(const Magazin &copie){
     this->ora_deschidere=copie.ora_deschidere;
     this->numar_telefon=copie.numar_telefon;
     this->site_web=copie.site_web;
+    maxId++;
 }
 
 Magazin& Magazin::operator=(const Magazin& copie){
@@ -104,5 +119,13 @@ void Magazin::setSiteWeb(const std::string &siteWeb) {
             else std::cout<<"Model: "<<it->first<<"\nPret: "<<it->second<<".";
             std::cout<<"\n";
     }
+
+int Magazin::getmaxId(){
+    return maxId;
+}
+
+void Magazin::setmaxId(const int n){
+    maxId = n;
+}
 
 

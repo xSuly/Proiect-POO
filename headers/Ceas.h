@@ -7,12 +7,15 @@
 
 #include <string>
 #include<iostream>
+#include"erori.h"
 
 class Ceas{
+protected:
     std::string brand;
     std::string model;
     float pret;
     int an_fabricatie;
+    virtual void afisare(std::ostream &os) const;
 public:
     Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie);
 
