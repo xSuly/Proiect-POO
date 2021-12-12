@@ -90,9 +90,9 @@ const std::vector<std::string> &Client::getCosDeCumparaturi() const {
     return cos_de_cumparaturi;
 }
 
-void Client::setCosDeCumparaturi(const std::vector<std::string> &cosDeCumparaturi) {
-    cos_de_cumparaturi = cosDeCumparaturi;
-}
+//void Client::setCosDeCumparaturi(const std::vector<std::string> &cosDeCumparaturi) {
+    //cos_de_cumparaturi = cosDeCumparaturi;
+//}
 
 const std::string &Client::getUsername() const {
     return username;
@@ -114,9 +114,9 @@ float Client::getBalantaCont() const {
     return balanta_cont;
 }
 
-void Client::setBalantaCont(float balantaCont) {
-    balanta_cont = balantaCont;
-}
+//void Client::setBalantaCont(float balantaCont) {
+    //balanta_cont = balantaCont;
+//}
 
 
 

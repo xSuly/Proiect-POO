@@ -9,6 +9,7 @@
 #include<vector>
 #include<chrono>
 #include<ctime>
+#include<iostream>
 #include"../headers/erori.h"
 
 class Magazin{
@@ -34,7 +35,14 @@ public:
         modele_disponibile.push_back(std::make_pair(nume, pret));
     }
 
-    void afisare_modele_disponibile(const Magazin &Magazin);
+    void afisare_modele_disponibile()
+    {
+        for ( auto it = modele_disponibile.begin(); it != modele_disponibile.end(); ++it)
+            if(it!=modele_disponibile.end()-1)
+                std::cout<<"Model: "<<it->first<<"\nPret: "<<it->second<<", ";
+            else std::cout<<"Model: "<<it->first<<"\nPret: "<<it->second<<".";
+        std::cout<<"\n";
+    }
 
     void in_timpul_programului(Magazin ora_deschidere, Magazin ora_inchidere)
     {

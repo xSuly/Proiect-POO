@@ -7,12 +7,13 @@
 
 Ceas::Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie) : brand(brand), model(model), pret(pret), an_fabricatie(anFabricatie) {
     if(pret<50)
-        throw ceas_ieftin();
+        throw eroare_pret();
 }
 
 
 std::ostream &operator<<(std::ostream &os, const Ceas &ceas) {
-    os << "Brand: " << ceas.brand << std::endl << "Model: " << ceas.model << std::endl << "Pret: " << ceas.pret << std::endl << "Anul fabricatiei: "<< ceas.an_fabricatie << std::endl;
+    //os << "Brand: " << ceas.brand << std::endl << "Model: " << ceas.model << std::endl << "Pret: " << ceas.pret << std::endl << "Anul fabricatiei: "<< ceas.an_fabricatie << std::endl;
+    ceas.afisare(os);
     return os;
 }
 

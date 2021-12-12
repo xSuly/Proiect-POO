@@ -20,7 +20,7 @@ class Client{
     std::string adresa_de_livrare;
     std::vector <std::string> cos_de_cumparaturi;
     std::vector <Magazin> magazin_cautat;
-    float suma=0;
+   // float suma=0;
     float balanta_cont=0;
     float pret_achizitie=0;
 public:
@@ -83,11 +83,11 @@ public:
 
     const std::vector <std::string> &getCosDeCumparaturi() const;
 
-    void setCosDeCumparaturi(const std::vector <std::string> &cosDeCumparaturi);
+    //void setCosDeCumparaturi(const std::vector <std::string> &cosDeCumparaturi);
 
     float getBalantaCont() const;
 
-    void setBalantaCont(float balantaCont);
+    //void setBalantaCont(float balantaCont);
 
 };
 

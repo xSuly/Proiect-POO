@@ -21,6 +21,8 @@ Magazin::Magazin(const std::string &numeMagazin, const std::string &oras, const 
         throw nume_scurt_magazin();
     if(ora_deschidere<7)
         throw ora_deschidere_invalida();
+    if(numarTelefon.length()!=10)
+        throw eroare_telefon();
 }
 
 Magazin::Magazin(const Magazin &copie): id(maxId){
@@ -111,14 +113,7 @@ const std::string &Magazin::getSiteWeb() const {
 void Magazin::setSiteWeb(const std::string &siteWeb) {
     site_web = siteWeb;
 }
-    void Magazin::afisare_modele_disponibile(const Magazin &Magazin)
-    {
-        for ( auto it = Magazin.modele_disponibile.begin(); it != Magazin.modele_disponibile.end(); ++it)
-            if(it!=Magazin.modele_disponibile.end()-1)
-                std::cout<<"Model: "<<it->first<<"\nPret: "<<it->second<<", ";
-            else std::cout<<"Model: "<<it->first<<"\nPret: "<<it->second<<".";
-            std::cout<<"\n";
-    }
+
 
 int Magazin::getmaxId(){
     return maxId;

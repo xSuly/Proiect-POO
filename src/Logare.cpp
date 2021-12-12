@@ -7,8 +7,8 @@
 #include "../headers/Client.h"
 
 
-Logare::Logare(bool ok) : ok(ok) {}
-Logare::Logare(const std::vector<Client> &users, bool ok) : users(users), ok(ok) {}
+Logare::Logare(bool dummy) : dummy(dummy) {}
+Logare::Logare(const std::vector<Client> &users, bool ok) : users(users), dummy(dummy) {}
 
 
 
@@ -20,12 +20,12 @@ void Logare::setUsers(const std::vector<Client> &users) {
     Logare::users = users;
 }
 
-bool Logare::isOk() const {
-    return ok;
+bool Logare::isDummy() const {
+    return dummy;
 }
 
-void Logare::setOk(bool ok) {
-    Logare::ok = ok;
+void Logare::setDummy(bool ok) {
+    Logare::dummy = dummy;
 }
 
 void Logare::user_add(const Client client) {
@@ -43,28 +43,23 @@ void Logare::login(const Client &Client) {
     std::cin >> parola;
     if(parola==Client.getPassword())
         std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
-    else while(i<2)
+    else switch(i)
         {
-        std::cout<<"Parola introdusa este gresita! Mai aveti 2 incercari.\n";
-        std::cin >> parola;
-            if(parola==Client.getPassword())
-            {std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
-                i=10;}
-            else
-            {
-                //i++;
-                std::cout << "Parola introdusa este tot gresita! Mai aveti o incercare.\n";
-                std::cin>> parola;
+            case 0:
+                std::cout<<"Parola introdusa este gresita! Mai aveti 2 incercari.\n";
+                std::cin >> parola;
                 if(parola==Client.getPassword())
                 {std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
-                    i=10;}
-                else {
-                    std::cout << "Ne pare rau, parola introdusa gresit de prea multe ori!\n";
-                    goto breakpoint;
-                }
-            }
-            breakpoint:
-            i=10;
+                    break;}
+                else i=1;
+                //break;
+            case 1:
+                std::cout << "Parola introdusa este tot gresita! Mai aveti o incercare.\n";
+                std::cin >> parola;
+                if(parola==Client.getPassword())
+                    std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
+                else std::cout << "Ne pare rau, parola introdusa gresit de prea multe ori!\n";
+                break;
         }
 
 }

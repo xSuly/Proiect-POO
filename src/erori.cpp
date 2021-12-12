@@ -11,4 +11,6 @@ nume_scurt_magazin::nume_scurt_magazin(): eroare_magazin("Numele magazinului est
 
 ora_deschidere_invalida::ora_deschidere_invalida(): eroare_magazin("Ora de deschidere invalida, ora 7 cel mai devreme.") {}
 
-ceas_ieftin::ceas_ieftin(): eroare_magazin("Ceasul este prea ieftin, minim 50 RON.") {}
+eroare_pret::eroare_pret(): eroare_magazin("Ceasul este prea ieftin, minim 50 RON.") {}
+
+eroare_telefon::eroare_telefon(): eroare_magazin("Numar de telefon invalid. Acesta trebuie sa aiba 10 cifre.") {}

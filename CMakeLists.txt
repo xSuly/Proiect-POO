@@ -15,5 +15,5 @@ add_executable(Proiect_POO
         ../headers/Logare.h
         src/erori.cpp
         ../headers/erori.h
-        "src/Modele ceas.cpp"
-        "headers/Modele ceas.h")
+        "src/Modele_ceas.cpp"
+        "headers/Modele_ceas.h")

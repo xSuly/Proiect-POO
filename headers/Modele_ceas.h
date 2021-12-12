@@ -25,12 +25,12 @@ protected:
 };
 
 class Fossil: public Ceas{
-    bool Smartwatch;
+    std::string Mecanism;
     bool rezistentApa;
     std::string tipCurea;
 
 public:
-    Fossil(const std::string &brand, const std::string &model, float pret, int anFabricatie, bool Smartwatch, bool rezistentApa, const std::string &tipCurea);
+    Fossil(const std::string &brand, const std::string &model, float pret, int anFabricatie, const std::string &Mecanism, bool rezistentApa, const std::string &tipCurea);
     ~Fossil();
     Fossil();
 protected:
@@ -39,12 +39,12 @@ protected:
 };
 
 class Atlantic: public Ceas{
-    bool Smartwatch;
+    bool afisareData;
     bool rezistentApa;
     std::string tipCurea;
 
 public:
-    Atlantic(const std::string &brand, const std::string &model, float pret, int anFabricatie, bool Smartwatch, bool rezistentApa, const std::string &tipCurea);
+    Atlantic(const std::string &brand, const std::string &model, float pret, int anFabricatie, bool afisareData, bool rezistentApa, const std::string &tipCurea);
     ~Atlantic();
     Atlantic();
 protected:

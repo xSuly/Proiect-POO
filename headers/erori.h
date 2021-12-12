@@ -22,9 +22,14 @@ public:
     ora_deschidere_invalida();
 };
 
-class ceas_ieftin : public eroare_magazin{
+class eroare_pret : public eroare_magazin{
 public:
-    ceas_ieftin();
+    eroare_pret();
+};
+
+class eroare_telefon : public eroare_magazin{
+public:
+    eroare_telefon();
 };
 
 

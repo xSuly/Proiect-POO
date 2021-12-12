@@ -13,7 +13,7 @@
 #include"headers/Ceas.h"
 #include"headers/Client.h"
 #include"headers/Logare.h"
-#include"headers/Modele ceas.h"
+#include"headers/Modele_ceas.h"
 #include<vector>
 
 int main() {
@@ -54,7 +54,8 @@ int main() {
 
     m1.adaugare_produs_disponibil("Townsman ME3197 Black", 825.0);
     m1.adaugare_produs_disponibil("Renato AR2448 Argintiu", 1010.0);
-    m1.afisare_modele_disponibile(m1);
+    m1.afisare_modele_disponibile();
+    std::cout << "---------------------\n";
     c2.adaugare_magazin({m1});
 
 
@@ -71,9 +72,20 @@ int main() {
     Logare l1({});
     //l1.login({c2});
 
+    std::cout<<"try/catch ----------------------\n";
+
     try{
         Magazin Victoria("Victoria Watches", "Ramnicu Sarat", "Bulevardul Principal", 8, 20, "0700491222", "watchRms.com");
         Rolex r1 = Rolex("Rolex", "Submariner 40mm", 23500.0, 2018, false, true, "Zale");
+        std::cout << r1;
+        Magazin WatchMania("WatchMania", "Hunedoara", "Bulevardul Sudului", 8, 16, "0727500123", "watchManiaHD.com");
+        Rolex r2 = Rolex("Rolex","Oyster Perpetual 31mm", 8046.0, 2021, false, true, "Zale");
+        std::cout << r2;
+        Magazin WatchZoom("WatchZoom", "Iasi", "Strada Catedralei", 10, 21, "0791623887", "watchZoom.com");
+        Fossil f1 = Fossil("Fossil", "MACHINE 42mm", 581.0, 2020, "Quartz(Baterie)", true, "Piele" );
+        std::cout << f1;
+        Atlantic a1 = Atlantic("Atlantic", "Seagold Limited Edition 40mm", 17898.0, 2019, true, true, "Piele");
+        std::cout << a1;
     }
     catch(eroare_magazin &eroare){
         std::cout << eroare.what() << std::endl;

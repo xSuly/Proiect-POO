@@ -12,20 +12,20 @@
 class Logare{
     //int balanta_cont;
     std::vector<Client> users;
-    bool ok;
+    bool dummy;
 public:
 
-    Logare(bool ok);
-    Logare(const std::vector<Client> &users, bool ok);
+    Logare(bool dummy);
+    Logare(const std::vector<Client> &users, bool dummy);
 
 
     const std::vector<Client> &getUsers() const;
 
     void setUsers(const std::vector<Client> &users);
 
-    bool isOk() const;
+    bool isDummy() const;
 
-    void setOk(bool ok);
+    void setDummy(bool dummy);
 
     void user_add(const Client client);
 
