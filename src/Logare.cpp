@@ -8,15 +8,15 @@
 
 
 Logare::Logare(bool dummy) : dummy(dummy) {}
-Logare::Logare(const std::vector<Client> &users, bool ok) : users(users), dummy(dummy) {}
+Logare::Logare(const std::vector<std::pair<Client, bool>> &users, bool ok) : users(users), dummy(dummy) {}
 
 
 
-const std::vector<Client> &Logare::getUsers() const {
+const std::vector<std::pair<Client, bool>> &Logare::getUsers() const {
     return users;
 }
 
-void Logare::setUsers(const std::vector<Client> &users) {
+void Logare::setUsers(const std::vector<std::pair<Client, bool>> &users) {
     Logare::users = users;
 }
 
@@ -29,7 +29,7 @@ void Logare::setDummy(bool ok) {
 }
 
 void Logare::user_add(const Client client) {
-    users.push_back(client);
+    users.push_back(std::make_pair(client, dummy=false));
 }
 
 
@@ -49,15 +49,21 @@ void Logare::login(const Client &Client) {
                 std::cout<<"Parola introdusa este gresita! Mai aveti 2 incercari.\n";
                 std::cin >> parola;
                 if(parola==Client.getPassword())
-                {std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
-                    break;}
+                    {
+                    std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
+                    dummy=true;
+                    break;
+                    }
                 else i=1;
                 //break;
             case 1:
                 std::cout << "Parola introdusa este tot gresita! Mai aveti o incercare.\n";
                 std::cin >> parola;
                 if(parola==Client.getPassword())
+                    {
                     std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
+                    dummy=true;
+                    }
                 else std::cout << "Ne pare rau, parola introdusa gresit de prea multe ori!\n";
                 break;
         }

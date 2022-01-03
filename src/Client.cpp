@@ -114,6 +114,10 @@ float Client::getBalantaCont() const {
     return balanta_cont;
 }
 
+
+
+
+
 //void Client::setBalantaCont(float balantaCont) {
     //balanta_cont = balantaCont;
 //}

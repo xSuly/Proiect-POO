@@ -23,10 +23,6 @@ class Magazin{
     std::vector < std::pair <std::string,float> > modele_disponibile;
     const int id;
     static int maxId;
-    /*{std::time_t tt;
-    system_clock::time_point today = system_clock::now();
-    tt = system_clock::to_time_t ( today );
-    std::cout << "today is: " << ctime(&tt);} *//// ??? pentru a verifica daca magazinul este deschis in momentul accesarii acestuia
 public:
     Magazin();
 
@@ -44,9 +40,16 @@ public:
         std::cout<<"\n";
     }
 
-    void in_timpul_programului(Magazin ora_deschidere, Magazin ora_inchidere)
+    void in_timpul_programului()
     {
-        /// todo
+        int oraD, oraI;
+        oraD=getOraDeschidere();
+        oraI=getOraInchidere();
+        time_t now = time(0);
+        tm *ltm = localtime(&now);
+        if(oraD<ltm->tm_hour && oraI>ltm->tm_hour)
+            std::cout<<"Magazinul '" <<getNumeMagazin()<< "' este deschis!\n";
+        else std::cout<<"Ne pare rau, magazinul '" << getNumeMagazin() << "' este inchis in acest interval orar!\n";
     }
 
     Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb);

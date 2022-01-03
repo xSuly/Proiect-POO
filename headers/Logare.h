@@ -11,17 +11,17 @@
 
 class Logare{
     //int balanta_cont;
-    std::vector<Client> users;
+    std::vector<std::pair<Client, bool>> users;
     bool dummy;
 public:
 
     Logare(bool dummy);
-    Logare(const std::vector<Client> &users, bool dummy);
+    Logare(const std::vector<std::pair<Client, bool>> &users, bool dummy);
 
 
-    const std::vector<Client> &getUsers() const;
+    const std::vector<std::pair<Client, bool>> &getUsers() const;
 
-    void setUsers(const std::vector<Client> &users);
+    void setUsers(const std::vector<std::pair<Client, bool>> &users);
 
     bool isDummy() const;
 

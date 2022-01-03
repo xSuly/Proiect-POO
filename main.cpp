@@ -18,7 +18,7 @@
 
 int main() {
 
-    Magazin m1("Watchshop", "Braila", "Bulevardul Decebal", 8, 20, "0700111222", "watch.com");
+    Magazin m1("Watchshop", "Braila", "Bulevardul Decebal", 8, 15, "0700111222", "watch.com");
     Magazin m2("Shopwatch", "Galati", "Bulevardul Traian", 9, 19, "0700333444", "shop.com");
     Magazin m3("Magazin Ceasuri", "Ramnicu Sarat", "Strada Burebista", 10, 20,  "0700555666", "ceasuri.com");
     Ceas rolexDaytona40("Rolex", "40MM ROLEX DAYTONA WATCH", 115000.0, 2021);
@@ -90,6 +90,12 @@ int main() {
     catch(eroare_magazin &eroare){
         std::cout << eroare.what() << std::endl;
     }
+
+    std::cout<<"--------------------ORA-----------------\n";
+    m1.in_timpul_programului();
+    m2.in_timpul_programului();
+    std::cout<<"\n----------------------------------\n";
+
 
 
 

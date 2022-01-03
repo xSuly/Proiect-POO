@@ -7,6 +7,8 @@
 
 #include <string>
 #include<iostream>
+#include <cstdio>
+#include <ctime>
 #include"erori.h"
 
 class Ceas{
@@ -16,6 +18,7 @@ protected:
     float pret;
     int an_fabricatie;
     virtual void afisare(std::ostream &os) const;
+    virtual void display_ora() const;
 public:
     Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie);
 

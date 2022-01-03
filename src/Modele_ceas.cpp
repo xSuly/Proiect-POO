@@ -14,6 +14,7 @@ Atlantic::Atlantic(const std::string &brand, const std::string &model, float pre
 Atlantic::~Atlantic() {};
 
 void Rolex::afisare(std::ostream &os) const {
+    Ceas::display_ora();
     Ceas::afisare(os);
     //os << "Smartwatch: " << Smartwatch << std::endl << "Rezistent apa?: " << rezistentApa << std::endl << "Tip curea: " << tipCurea << std::endl;
     os << "Smartwatch: ";
@@ -26,6 +27,11 @@ void Rolex::afisare(std::ostream &os) const {
     else os <<"Nu" <<std::endl;
     os<<"Tip curea: "<<tipCurea<<std::endl<<std::endl;
 }
+
+void Rolex::display_ora() const {
+    Ceas::display_ora();
+}
+
 void Fossil::afisare(std::ostream &os) const {
     Ceas::afisare(os);
     os << "Tip mecanism: " << Mecanism << std::endl;

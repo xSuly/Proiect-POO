@@ -21,6 +21,7 @@ public:
     //friend std::ostream &operator<<(std::ostream &os, const Ceas &Rolex);
 protected:
     void afisare(std::ostream &os) const override;
+    void display_ora() const;
 
 };
 

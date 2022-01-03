@@ -9,6 +9,8 @@
 #include <vector>
 #include"Ceas.h"
 #include "Magazin.h"
+#include <cstdio>
+#include <ctime>
 //#include "../headers/Logare.h"
 
 class Client{
@@ -38,6 +40,9 @@ public:
     {
         /// todo
     }
+
+
+
     void calculare_total()
     {
         std::cout<<pret_achizitie<<" LEI.\n";
