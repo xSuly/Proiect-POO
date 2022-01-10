@@ -93,33 +93,7 @@ void Ceas::display_ora() const{
 
 }
 void Ceas::afisare_data() const {
-    time_t now = time(NULL);
-    tm *ltm = localtime(&now);
-    switch(ltm->tm_wday)
-    {
-        case 0:
-            std::cout<<"Duminica, "<<(ltm->tm_mday)<<"."<< (ltm->tm_mon)+1 <<"."<< (ltm->tm_year)+1900<<std::endl;
-            break;
-        case 1:
-            std::cout<<"Luni, "<<(ltm->tm_mday)<<"."<< (ltm->tm_mon)+1 <<"."<< (ltm->tm_year)+1900<<std::endl;
-            break;
-        case 2:
-            std::cout<<"Marti, "<<(ltm->tm_mday)<<"."<< (ltm->tm_mon)+1 <<"."<< (ltm->tm_year)+1900<<std::endl;
-            break;
-        case 3:
-            std::cout<<"Miercuri, "<<(ltm->tm_mday)<<"."<< (ltm->tm_mon)+1 <<"."<< (ltm->tm_year)+1900<<std::endl;
-            break;
-        case 4:
-            std::cout<<"Joi, "<<(ltm->tm_mday)<<"."<< (ltm->tm_mon)+1 <<"."<< (ltm->tm_year)+1900<<std::endl;
-            break;
-        case 5:
-            std::cout<<"Vineri, "<<(ltm->tm_mday)<<"."<< (ltm->tm_mon)+1 <<"."<< (ltm->tm_year)+1900<<std::endl;
-            break;
-        case 6:
-            std::cout<<"Sambata, "<<(ltm->tm_mday)<<"."<< (ltm->tm_mon)+1 <<"."<< (ltm->tm_year)+1900<<std::endl;
-            break;
-    }
-
+    std::cout <<"Afisare data curenta.\n";
 }
 
 

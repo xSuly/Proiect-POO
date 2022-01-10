@@ -37,7 +37,18 @@ public:
     Fossil();
 protected:
     void afisare(std::ostream &os) const override;
-    void afisare_data() const;
+    void afisare_data_fossil() const
+    {
+        setlocale(LC_ALL, "ro_RO");
+        time_t t = time(nullptr);
+        tm *ltm = localtime(&t);
+        char mbstr[100];
+        if (strftime(mbstr, sizeof(mbstr), "%A", localtime(&t)))
+        {
+            std::cout << "Astazi este "<<mbstr << ", "<<(ltm->tm_mday)<<"."<< (ltm->tm_mon)+1 <<"."<< (ltm->tm_year)+1900<<".\n";
+        }
+
+    };
 
 };
 
