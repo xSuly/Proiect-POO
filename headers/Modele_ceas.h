@@ -9,6 +9,7 @@
 #include"../headers/Ceas.h"
 #include<string>
 
+
 class Rolex: public Ceas{
     bool Smartwatch;
     bool rezistentApa;
@@ -36,6 +37,7 @@ public:
     Fossil();
 protected:
     void afisare(std::ostream &os) const override;
+    void afisare_data() const;
 
 };
 

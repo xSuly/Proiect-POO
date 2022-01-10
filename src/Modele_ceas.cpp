@@ -33,6 +33,7 @@ void Rolex::display_ora() const {
 }
 
 void Fossil::afisare(std::ostream &os) const {
+    Ceas::afisare_data();
     Ceas::afisare(os);
     os << "Tip mecanism: " << Mecanism << std::endl;
     os<< "Rezistent la apa?: ";
@@ -40,6 +41,10 @@ void Fossil::afisare(std::ostream &os) const {
         os << "Da" <<std::endl;
     else os <<"Nu" <<std::endl;
     os<<"Tip curea: "<<tipCurea<<std::endl<<std::endl;
+}
+
+void Fossil::afisare_data() const {
+    Ceas::afisare_data();
 }
 void Atlantic::afisare(std::ostream &os) const {
     Ceas::afisare(os);

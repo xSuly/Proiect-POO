@@ -5,7 +5,8 @@
 
 #include "../headers/Logare.h"
 #include "../headers/Client.h"
-
+#include "../parola_Encryption/digestpp.hpp"
+using namespace digestpp;
 
 Logare::Logare(bool dummy) : dummy(dummy) {}
 Logare::Logare(const std::vector<std::pair<Client, bool>> &users, bool ok) : users(users), dummy(dummy) {}
@@ -41,14 +42,16 @@ void Logare::login(const Client &Client) {
     std::string parola;
     int i=0;
     std::cin >> parola;
-    if(parola==Client.getPassword())
+    auto hashed_pw = blake2b(256).absorb(parola).hexdigest();
+    if(hashed_pw==blake2b(256).absorb(Client.getPassword()).hexdigest())
         std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
     else switch(i)
         {
             case 0:
                 std::cout<<"Parola introdusa este gresita! Mai aveti 2 incercari.\n";
                 std::cin >> parola;
-                if(parola==Client.getPassword())
+                hashed_pw = blake2b(256).absorb(parola).hexdigest();
+                if(hashed_pw==blake2b(256).absorb(Client.getPassword()).hexdigest())
                     {
                     std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
                     dummy=true;
@@ -59,7 +62,8 @@ void Logare::login(const Client &Client) {
             case 1:
                 std::cout << "Parola introdusa este tot gresita! Mai aveti o incercare.\n";
                 std::cin >> parola;
-                if(parola==Client.getPassword())
+                hashed_pw = blake2b(256).absorb(parola).hexdigest();
+                if(hashed_pw==blake2b(256).absorb(Client.getPassword()).hexdigest())
                     {
                     std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
                     dummy=true;

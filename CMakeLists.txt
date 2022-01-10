@@ -16,4 +16,5 @@ add_executable(Proiect_POO
         src/erori.cpp
         ../headers/erori.h
         "src/Modele_ceas.cpp"
-        "headers/Modele_ceas.h")
+        "headers/Modele_ceas.h"
+        parola_Encryption/digestpp.hpp)
