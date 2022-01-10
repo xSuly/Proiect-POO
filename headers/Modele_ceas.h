@@ -8,7 +8,8 @@
 
 #include"../headers/Ceas.h"
 #include<string>
-#include <unistd.h>
+#include <chrono>
+#include <thread>
 #define MST (-7)
 #define UTC (0)
 #define CCT (+8)
@@ -98,7 +99,7 @@ protected:
         std::cin>>stopwatch;
         std::cout<<std::endl;
         while(stopwatch>sec) {
-            sleep(1);
+            std::this_thread::sleep_for(std::chrono::seconds(1));
             sec++;
             std::cout << sec << std::endl;
         }
