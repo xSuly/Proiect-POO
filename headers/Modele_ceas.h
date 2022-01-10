@@ -10,13 +10,13 @@
 #include<string>
 #include <chrono>
 #include <thread>
-#define MST (-7)
-#define UTC (0)
-#define CCT (+8)
-#define WDC (-5)
-#define BAT (-3)
-#define CET (+1)
-#define MCT (+3)
+const int MST =-7;
+const int UTC =0;
+const int CCT =8;
+const int WDC =-5;
+const int BAT =-3;
+const int CET =1;
+const int MCT =3;
 
 
 class Rolex: public Ceas{
