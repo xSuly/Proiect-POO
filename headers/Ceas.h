@@ -20,7 +20,6 @@ protected:
     int an_fabricatie;
     virtual void afisare(std::ostream &os) const;
     virtual void display_ora() const;
-    virtual void afisare_data() const;
 public:
     Ceas(const std::string &brand, const std::string &model, float pret, int anFabricatie);
 

@@ -15,6 +15,7 @@ Atlantic::~Atlantic() {};
 
 void Rolex::afisare(std::ostream &os) const {
     Ceas::display_ora();
+    Rolex::display_ora_pe_glob();
     Ceas::afisare(os);
     //os << "Smartwatch: " << Smartwatch << std::endl << "Rezistent apa?: " << rezistentApa << std::endl << "Tip curea: " << tipCurea << std::endl;
     os << "Smartwatch: ";
@@ -29,7 +30,7 @@ void Rolex::afisare(std::ostream &os) const {
 }
 
 void Rolex::display_ora() const {
-    Ceas::display_ora();
+   Ceas::display_ora();
 }
 
 void Fossil::afisare(std::ostream &os) const {
@@ -45,6 +46,7 @@ void Fossil::afisare(std::ostream &os) const {
 
 
 void Atlantic::afisare(std::ostream &os) const {
+
     Ceas::afisare(os);
     os << "Afiseaza data?: ";
     if(afisareData == 1)
@@ -55,4 +57,5 @@ void Atlantic::afisare(std::ostream &os) const {
         os << "Da" <<std::endl;
     else os <<"Nu" <<std::endl;
     os<<"Tip curea: "<<tipCurea<<std::endl<<std::endl;
+    Atlantic::cronometru();
 }

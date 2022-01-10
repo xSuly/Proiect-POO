@@ -92,9 +92,6 @@ void Ceas::display_ora() const{
     }
 
 }
-void Ceas::afisare_data() const {
-    std::cout <<"Afisare data curenta.\n";
-}
 
 
 const std::string &Ceas::getBrand() const {

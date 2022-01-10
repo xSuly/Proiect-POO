@@ -8,6 +8,14 @@
 
 #include"../headers/Ceas.h"
 #include<string>
+#include <unistd.h>
+#define MST (-7)
+#define UTC (0)
+#define CCT (+8)
+#define WDC (-5)
+#define BAT (-3)
+#define CET (+1)
+#define MCT (+3)
 
 
 class Rolex: public Ceas{
@@ -23,6 +31,25 @@ public:
 protected:
     void afisare(std::ostream &os) const override;
     void display_ora() const;
+    void display_ora_pe_glob() const
+    {
+        time_t rawtime;
+        struct tm * ptm;
+
+        time ( &rawtime );
+
+        ptm = gmtime ( &rawtime );
+
+        std::cout<<"Ora curenta in jurul Lumii: \n";
+
+        std::cout<<"Phoenix, AZ (U.S.A.)-> " << (ptm->tm_hour+MST)%24<<":"<<ptm->tm_min<<"\n";
+        std::cout<<"Reykjavik (Islanda)-> " << (ptm->tm_hour+UTC)%24<<":"<<ptm->tm_min<<"\n";
+        std::cout<<"Beijing (China)-> " << (ptm->tm_hour+CCT)%24<<":"<<ptm->tm_min<<"\n";
+        std::cout<<"Washington DC (U.S.A.)-> " << (ptm->tm_hour+WDC)%24<<":"<<ptm->tm_min<<"\n";
+        std::cout<<"Buenos Aires (Argentina)-> " << (ptm->tm_hour+BAT)%24<<":"<<ptm->tm_min<<"\n";
+        std::cout<<"Roma (Italia), Paris (Franta), Madrid (Spania)-> " << (ptm->tm_hour+CET)%24<<":"<<ptm->tm_min<<"\n";
+        std::cout<<"Moscova (Rusia)-> " << (ptm->tm_hour+MCT)%24<<":"<<ptm->tm_min<<"\n";
+    }
 
 };
 
@@ -63,6 +90,20 @@ public:
     Atlantic();
 protected:
     void afisare(std::ostream &os) const override;
+    void cronometru() const
+    {
+        int sec = 0;
+        int stopwatch;
+        std::cout<<"Cate secunde sa funtioneze cronometrul?: ";
+        std::cin>>stopwatch;
+        std::cout<<std::endl;
+        while(stopwatch>sec) {
+            sleep(1);
+            sec++;
+            std::cout << sec << std::endl;
+        }
+        std::cout<<"Cele "<<sec<<" secunde setate pe cronometrul ceasului Atlantic tocmai s-au scurs!\n";
+    }
 
 };
 
