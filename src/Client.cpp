@@ -7,8 +7,8 @@
 
 
 
-    Client::Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare, float balantaCont) : nume(nume), prenume(prenume), username(username), password(password), oras(oras), adresa_de_livrare(adresaDeLivrare), balanta_cont(balantaCont){}
-    Client::Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare, float balantaCont, const std::vector<std::string> &cosDeCumparaturi) : nume(nume), prenume(prenume), username(username), password(password), oras(oras), adresa_de_livrare(adresaDeLivrare), balanta_cont(balantaCont), cos_de_cumparaturi(cosDeCumparaturi) {}
+    //Client::Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare, float balantaCont) : nume(nume), prenume(prenume), username(username), password(password), oras(oras), adresa_de_livrare(adresaDeLivrare), balanta_cont(balantaCont){}
+    //Client::Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare, float balantaCont, const std::vector<std::string> &cosDeCumparaturi) : nume(nume), prenume(prenume), username(username), password(password), oras(oras), adresa_de_livrare(adresaDeLivrare), balanta_cont(balantaCont), cos_de_cumparaturi(cosDeCumparaturi) {}
 
     std::ostream &operator<<(std::ostream &os, const Client &client) {
     os << "Nume: " << client.nume << " Prenume: " << client.prenume << " Username: " << client.username << " Password: " << client.password << " Oras: " << client.oras << " Adresa livrare: " << client.adresa_de_livrare << " Balanta cont: "<<client.balanta_cont<< " Cos de cumparaturi: ";

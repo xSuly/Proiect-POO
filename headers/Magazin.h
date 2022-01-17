@@ -12,17 +12,19 @@
 #include<iostream>
 #include"../headers/erori.h"
 
+template <typename T>
 class Magazin{
     std::string nume_magazin;
     std::string oras;
     std::string adresa;
     int ora_deschidere;
-    int ora_inchidere;
+    T ora_inchidere;
     std::string numar_telefon;
     std::string site_web;
     std::vector < std::pair <std::string,float> > modele_disponibile;
     const int id;
     static int maxId;
+    friend class magazin_builder;
 public:
     Magazin();
 
@@ -52,13 +54,13 @@ public:
         else std::cout<<"Ne pare rau, magazinul '" << getNumeMagazin() << "' este inchis in acest interval orar!\n";
     }
 
-    Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb);
+   Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, T ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb);
 
     Magazin(const Magazin &copie);
 
     Magazin& operator=(const Magazin& copie);
     ~Magazin();
-    friend std::ostream &operator<<(std::ostream &os, const Magazin &cinema);
+    friend std::ostream &operator<<(std::ostream &os, const Magazin<int> &magazin);
 
     const std::string &getNumeMagazin() const;
 
@@ -93,6 +95,7 @@ public:
     static void setmaxId(const int);
 
 };
+
 
 
 

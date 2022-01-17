@@ -5,9 +5,11 @@
 #include "../headers/Magazin.h"
 #include<iostream>
 
-int Magazin::maxId = 1;
+template <typename T>
+int Magazin<T>::maxId = 1;
 
-Magazin::Magazin(): id(maxId){
+template <typename T>
+Magazin<T>::Magazin(): id(maxId){
     maxId++;
     if(nume_magazin.length()<5)
         throw nume_scurt_magazin();
@@ -15,7 +17,8 @@ Magazin::Magazin(): id(maxId){
         throw ora_deschidere_invalida();
 }
 
-Magazin::Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, int ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb) : nume_magazin(numeMagazin), oras(oras), adresa(adresa), ora_inchidere(ora_inchidere), ora_deschidere(ora_deschidere), numar_telefon(numarTelefon), site_web(siteWeb), id(maxId) {
+template <typename T>
+Magazin<T>::Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, T ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb) : nume_magazin(numeMagazin), oras(oras), adresa(adresa), ora_inchidere(ora_inchidere), ora_deschidere(ora_deschidere), numar_telefon(numarTelefon), site_web(siteWeb), id(maxId) {
     maxId++;
     if(nume_magazin.length()<5)
         throw nume_scurt_magazin();
@@ -25,7 +28,8 @@ Magazin::Magazin(const std::string &numeMagazin, const std::string &oras, const 
         throw eroare_telefon();
 }
 
-Magazin::Magazin(const Magazin &copie): id(maxId){
+template <typename T>
+Magazin<T>::Magazin(const Magazin &copie): id(maxId){
     this->nume_magazin=copie.nume_magazin;
     this->oras=copie.oras;
     this->adresa=copie.adresa;
@@ -37,7 +41,8 @@ Magazin::Magazin(const Magazin &copie): id(maxId){
     maxId++;
 }
 
-Magazin& Magazin::operator=(const Magazin& copie){
+template <typename T>
+Magazin<T>& Magazin<T>::operator=(const Magazin& copie){
     this->nume_magazin=copie.nume_magazin;
     this->oras=copie.oras;
     this->adresa=copie.adresa;
@@ -49,78 +54,95 @@ Magazin& Magazin::operator=(const Magazin& copie){
     return *this;
 }
 
-Magazin::~Magazin() {
+template <typename T>
+Magazin<T>::~Magazin() {
     std::cout<<"destructor magazin \n";
 }
 
- std::ostream &operator<<(std::ostream &os, const Magazin &magazin) {
+template <typename T>
+ std::ostream &operator<<(std::ostream &os, const Magazin<int> &magazin) {
     os <<"Nume magazin: " <<magazin.nume_magazin<<std::endl<< "Oras: " << magazin.oras << std::endl << "Adresa: " << magazin.adresa << std::endl << "Orar: " << magazin.ora_inchidere<<" "<<magazin.ora_deschidere<< std::endl << "Numar de telefon: " << magazin.numar_telefon << std::endl << "Adresa site web magazin: " << magazin.site_web << std::endl;
     return os;
 }
 
-const std::string &Magazin::getNumeMagazin() const {
+template <typename T>
+const std::string &Magazin<T>::getNumeMagazin() const {
     return nume_magazin;
 }
 
-void Magazin::setNumeMagazin(const std::string &numeMagazin) {
+template <typename T>
+void Magazin<T>::setNumeMagazin(const std::string &numeMagazin) {
     nume_magazin = numeMagazin;
 }
 
-const std::string &Magazin::getOras() const {
+template <typename T>
+const std::string &Magazin<T>::getOras() const {
     return oras;
 }
 
-void Magazin::setOras(const std::string &oras) {
+template <typename T>
+void Magazin<T>::setOras(const std::string &oras) {
     Magazin::oras = oras;
 }
 
-const std::string &Magazin::getAdresa() const {
+template <typename T>
+const std::string &Magazin<T>::getAdresa() const {
     return adresa;
 }
 
-void Magazin::setAdresa(const std::string &adresa) {
+template <typename T>
+void Magazin<T>::setAdresa(const std::string &adresa) {
     Magazin::adresa = adresa;
 }
 
-int Magazin::getOraDeschidere() const {
+template <typename T>
+int Magazin<T>::getOraDeschidere() const {
     return ora_deschidere;
 }
 
-void Magazin::setOraDeschidere(int oraDeschidere) {
+template <typename T>
+void Magazin<T>::setOraDeschidere(int oraDeschidere) {
     ora_deschidere = oraDeschidere;
 }
 
-int Magazin::getOraInchidere() const {
+template <typename T>
+int Magazin<T>::getOraInchidere() const {
     return ora_inchidere;
 }
 
-void Magazin::setOraInchidere(int oraInchidere) {
+template <typename T>
+void Magazin<T>::setOraInchidere(int oraInchidere) {
     ora_inchidere = oraInchidere;
 }
 
-const std::string &Magazin::getNumarTelefon() const {
+template <typename T>
+const std::string &Magazin<T>::getNumarTelefon() const {
     return numar_telefon;
 }
 
-void Magazin::setNumarTelefon(const std::string &numarTelefon) {
+template <typename T>
+void Magazin<T>::setNumarTelefon(const std::string &numarTelefon) {
     numar_telefon = numarTelefon;
 }
 
-const std::string &Magazin::getSiteWeb() const {
+template <typename T>
+const std::string &Magazin<T>::getSiteWeb() const {
     return site_web;
 }
 
-void Magazin::setSiteWeb(const std::string &siteWeb) {
+template <typename T>
+void Magazin<T>::setSiteWeb(const std::string &siteWeb) {
     site_web = siteWeb;
 }
 
-
-int Magazin::getmaxId(){
+template <typename T>
+int Magazin<T>::getmaxId(){
     return maxId;
 }
 
-void Magazin::setmaxId(const int n){
+template <typename T>
+void Magazin<T>::setmaxId(const int n){
     maxId = n;
 }
 
-
+template class Magazin<int>;

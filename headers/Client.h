@@ -21,10 +21,11 @@ class Client{
     std::string oras;
     std::string adresa_de_livrare;
     std::vector <std::string> cos_de_cumparaturi;
-    std::vector <Magazin> magazin_cautat;
+    std::vector <Magazin<int>> magazin_cautat;
    // float suma=0;
     float balanta_cont=0;
     float pret_achizitie=0;
+    friend class client_builder;
 public:
     Client();
     void adaugare_produs(const Ceas &Ceas)
@@ -32,11 +33,11 @@ public:
         cos_de_cumparaturi.push_back(Ceas.getModel());
         pret_achizitie+=Ceas.getPret();
     }
-    void adaugare_magazin(const Magazin &Magazin)
+    void adaugare_magazin(const Magazin<int> &Magazin)
     {
         magazin_cautat.push_back(Magazin);
     }
-    void cautare_produs_magazin(const Ceas &Ceas, const Magazin &Magazin)
+    void cautare_produs_magazin(const Ceas &Ceas, const Magazin<int> &Magazin)
     {
         /// todo
     }
@@ -56,8 +57,8 @@ public:
         balanta_cont+=suma;
     }
 
-    Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare, float balanta_cont);
-    Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare, float balanta_cont, const std::vector<std::string> &cosDeCumparaturi);
+    //Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare, float balanta_cont);
+    //Client(const std::string &nume, const std::string &prenume, const std::string &username, const std::string &password, const std::string &oras, const std::string &adresaDeLivrare, float balanta_cont, const std::vector<std::string> &cosDeCumparaturi);
     Client(const Client& copie);
     Client& operator=(const Client& copie);
     friend std::ostream &operator<<(std::ostream &os, const Client &client);
@@ -94,6 +95,49 @@ public:
 
     //void setBalantaCont(float balantaCont);
 
+};
+
+class client_builder{
+private:
+    class Client Client;
+
+public:
+    client_builder() = default;
+    client_builder& nume(std::string nume){
+        Client.nume = nume;
+        return *this;
+    }
+    client_builder& prenume(std::string prenume){
+        Client.prenume = prenume;
+        return *this;
+    }
+    client_builder& username(std::string username){
+        Client.username = username;
+        return *this;
+    }
+    client_builder& password(std::string password){
+        Client.password = password;
+        return *this;
+    }
+    client_builder& oras(std::string oras){
+        Client.oras = oras;
+        return *this;
+    }
+    client_builder& adresa_de_livrare(std::string adresa_de_livrare){
+        Client.adresa_de_livrare = adresa_de_livrare;
+        return *this;
+    }
+    client_builder& cos_de_cumparaturi(std::vector<std::string> cos_de_cumparaturi){
+        Client.cos_de_cumparaturi = cos_de_cumparaturi;
+        return *this;
+    }
+    client_builder& magazin_cautat(std::vector<Magazin<int>> magazin_cautat){
+        Client.magazin_cautat = magazin_cautat;
+        return *this;
+    }
+    class Client build(){
+        return Client;
+    }
 };
 
 
