@@ -65,6 +65,7 @@ void storeDigit(int digit, int offset) ///SEE README FOR DETAILS
             {
                 canvas[y][x] = CLOCK_CHAR;
             }
+            else canvas[y][x]= ' ';
         }
     }
 }
