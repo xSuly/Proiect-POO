@@ -12,6 +12,9 @@
 #include <cstdio>
 #include <ctime>
 //#include "../headers/Logare.h"
+#include "../parola_Encryption/digestpp.hpp"
+
+using namespace digestpp;
 
 class Client{
     std::string nume;
@@ -116,7 +119,7 @@ public:
         return *this;
     }
     client_builder& password(const std::string& password){
-        Client.password = password;
+        Client.password = blake2b(256).absorb(password).hexdigest();
         return *this;
     }
     client_builder& oras(const std::string& oras){

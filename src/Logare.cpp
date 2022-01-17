@@ -43,7 +43,7 @@ void Logare::login(const Client &Client) {
     int i=0;
     std::cin >> parola;
     auto hashed_pw = blake2b(256).absorb(parola).hexdigest();
-    if(hashed_pw==blake2b(256).absorb(Client.getPassword()).hexdigest())
+    if(hashed_pw==Client.getPassword())
         std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
     else switch(i)
         {
@@ -51,7 +51,7 @@ void Logare::login(const Client &Client) {
                 std::cout<<"Parola introdusa este gresita! Mai aveti 2 incercari.\n";
                 std::cin >> parola;
                 hashed_pw = blake2b(256).absorb(parola).hexdigest();
-                if(hashed_pw==blake2b(256).absorb(Client.getPassword()).hexdigest())
+                if(hashed_pw==Client.getPassword())
                     {
                     std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
                     dummy=true;
@@ -63,7 +63,7 @@ void Logare::login(const Client &Client) {
                 std::cout << "Parola introdusa este tot gresita! Mai aveti o incercare.\n";
                 std::cin >> parola;
                 hashed_pw = blake2b(256).absorb(parola).hexdigest();
-                if(hashed_pw==blake2b(256).absorb(Client.getPassword()).hexdigest())
+                if(hashed_pw==Client.getPassword())
                     {
                     std::cout << "Parola introdusa este corecta! Puteti sa va efectuati cumparaturile!\n";
                     dummy=true;
