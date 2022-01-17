@@ -15,7 +15,7 @@
 #include"headers/Logare.h"
 #include"headers/Modele_ceas.h"
 #include"headers/aplicatie.h"
-#include<vector>
+
 
 int main() {
 
@@ -29,6 +29,8 @@ int main() {
     c1.adaugare_produs({rolexDaytona40});
 
     Magazin<int> m4("Magazin ceasuri de mana luxury", "Bucuresti", "Strada Unirii", 7, 16,  "0725364758", "luxurywatch.ro");
+    Magazin<long> m5("WatchTest", "Roman", "Strada Nr. 7", 10, 17, "0725567123", "watchtest.ro");
+    Magazin<unsigned int> m6("BBShop", "Focsani", "Strada Furnicilor", 8, 20, "0238561234", "bbshop.com");
     Ceas model2("Fossil", "Townsman ME3197 Black", 825.0, 2019);
     Ceas model3("Emporio Armani", "Renato AR2448 Argintiu", 1010.0, 2015);
     //Magazin m5("Magazin", "rm", "str", 12, 15, "0707070707", "site.com");

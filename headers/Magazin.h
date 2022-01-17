@@ -17,7 +17,7 @@ class Magazin{
     std::string nume_magazin;
     std::string oras;
     std::string adresa;
-    int ora_deschidere;
+    T ora_deschidere;
     T ora_inchidere;
     std::string numar_telefon;
     std::string site_web;
@@ -54,7 +54,7 @@ public:
         else std::cout<<"Ne pare rau, magazinul '" << getNumeMagazin() << "' este inchis in acest interval orar!\n";
     }
 
-   Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, T ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb);
+   Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, T ora_deschidere, T ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb);
 
     Magazin(const Magazin &copie);
 

@@ -18,7 +18,7 @@ Magazin<T>::Magazin(): id(maxId){
 }
 
 template <typename T>
-Magazin<T>::Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, int ora_deschidere, T ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb) : nume_magazin(numeMagazin), oras(oras), adresa(adresa), ora_inchidere(ora_inchidere), ora_deschidere(ora_deschidere), numar_telefon(numarTelefon), site_web(siteWeb), id(maxId) {
+Magazin<T>::Magazin(const std::string &numeMagazin, const std::string &oras, const std::string &adresa, T ora_deschidere, T ora_inchidere, const std::string &numarTelefon, const std::string &siteWeb) : nume_magazin(numeMagazin), oras(oras), adresa(adresa), ora_inchidere(ora_inchidere), ora_deschidere(ora_deschidere), numar_telefon(numarTelefon), site_web(siteWeb), id(maxId) {
     maxId++;
     if(nume_magazin.length()<5)
         throw nume_scurt_magazin();
@@ -146,3 +146,5 @@ void Magazin<T>::setmaxId(const int n){
 }
 
 template class Magazin<int>;
+template class Magazin<long>;
+template class Magazin<unsigned int>;

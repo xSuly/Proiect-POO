@@ -58,33 +58,33 @@ Client::Client()=default;
     return nume;
 }
 
-void Client::setNume(const std::string &nume) {
+/*void Client::setNume(const std::string &nume) {
     Client::nume = nume;
-}
+}*/
 
 const std::string &Client::getPrenume() const {
     return prenume;
 }
 
-void Client::setPrenume(const std::string &prenume) {
+/*void Client::setPrenume(const std::string &prenume) {
     Client::prenume = prenume;
-}
+}*/
 
 const std::string &Client::getOras() const {
     return oras;
 }
 
-void Client::setOras(const std::string &oras) {
+/*void Client::setOras(const std::string &oras) {
     Client::oras = oras;
-}
+}*/
 
 const std::string &Client::getAdresaDeLivrare() const {
     return adresa_de_livrare;
 }
 
-void Client::setAdresaDeLivrare(const std::string &adresaDeLivrare) {
+/*void Client::setAdresaDeLivrare(const std::string &adresaDeLivrare) {
     adresa_de_livrare = adresaDeLivrare;
-}
+}*/
 
 const std::vector<std::string> &Client::getCosDeCumparaturi() const {
     return cos_de_cumparaturi;
@@ -98,17 +98,17 @@ const std::string &Client::getUsername() const {
     return username;
 }
 
-void Client::setUsername(const std::string &username) {
+/*void Client::setUsername(const std::string &username) {
     Client::username = username;
-}
+}*/
 
 const std::string &Client::getPassword() const {
     return password;
 }
 
-void Client::setPassword(const std::string &password) {
+/*void Client::setPassword(const std::string &password) {
     Client::password = password;
-}
+}*/
 
 float Client::getBalantaCont() const {
     return balanta_cont;

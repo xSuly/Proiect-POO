@@ -65,27 +65,27 @@ public:
 
     const std::string &getNume() const;
 
-    void setNume(const std::string &nume);
+    //void setNume(const std::string &nume);
 
     const std::string &getPrenume() const;
 
-    void setPrenume(const std::string &prenume);
+    //void setPrenume(const std::string &prenume);
 
     const std::string &getUsername() const;
 
-    void setUsername(const std::string &username);
+    //void setUsername(const std::string &username);
 
     const std::string &getPassword() const;
 
-    void setPassword(const std::string &password);
+    //void setPassword(const std::string &password);
 
     const std::string &getOras() const;
 
-    void setOras(const std::string &oras);
+    //void setOras(const std::string &oras);
 
     const std::string &getAdresaDeLivrare() const;
 
-    void setAdresaDeLivrare(const std::string &adresaDeLivrare);
+    //void setAdresaDeLivrare(const std::string &adresaDeLivrare);
 
     const std::vector <std::string> &getCosDeCumparaturi() const;
 
@@ -103,35 +103,35 @@ private:
 
 public:
     client_builder() = default;
-    client_builder& nume(std::string nume){
+    client_builder& nume(const std::string& nume){
         Client.nume = nume;
         return *this;
     }
-    client_builder& prenume(std::string prenume){
+    client_builder& prenume(const std::string& prenume){
         Client.prenume = prenume;
         return *this;
     }
-    client_builder& username(std::string username){
+    client_builder& username(const std::string& username){
         Client.username = username;
         return *this;
     }
-    client_builder& password(std::string password){
+    client_builder& password(const std::string& password){
         Client.password = password;
         return *this;
     }
-    client_builder& oras(std::string oras){
+    client_builder& oras(const std::string& oras){
         Client.oras = oras;
         return *this;
     }
-    client_builder& adresa_de_livrare(std::string adresa_de_livrare){
+    client_builder& adresa_de_livrare(const std::string& adresa_de_livrare){
         Client.adresa_de_livrare = adresa_de_livrare;
         return *this;
     }
-    client_builder& cos_de_cumparaturi(std::vector<std::string> cos_de_cumparaturi){
+    client_builder& cos_de_cumparaturi(const std::vector<std::string>& cos_de_cumparaturi){
         Client.cos_de_cumparaturi = cos_de_cumparaturi;
         return *this;
     }
-    client_builder& magazin_cautat(std::vector<Magazin<int>> magazin_cautat){
+    client_builder& magazin_cautat(const std::vector<Magazin<int>>& magazin_cautat){
         Client.magazin_cautat = magazin_cautat;
         return *this;
     }
